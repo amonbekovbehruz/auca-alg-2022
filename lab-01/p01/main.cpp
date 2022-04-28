@@ -36,7 +36,6 @@ void printRevOrder(Node *tail)
 
 void clear(Node *&head, Node *&tail)
 {
-
   for (Node *p = head; p != nullptr;)
   {
     Node *t = p;
@@ -58,6 +57,7 @@ void pushBack(Node *&head, Node *&tail, int x)
     tail = tail->mNext;
   }
 }
+
 void insertBefore(Node *&head, Node *cur, int x)
 {
   if (head == cur)
@@ -103,6 +103,7 @@ Node *erase(Node *&head, Node *&tail, Node *cur)
   delete cur;
   return  t;
 }
+
 int main()
 {
   Node *head = nullptr;

@@ -3,6 +3,34 @@
 #include <algorithm>
 using namespace std;
 
+struct Node {
+    Node *mPrev;
+    Node *mNext;
+    int mData;
+
+    Node(Node *prev, Node *next, int data) : mPrev(prev), mNext(next), mData(data) {} 
+};
+
+void insertBefore(Node *&head, Node *curr, int data) {
+    if (curr == head)
+    {
+        head->mPrev = new Node (nullptr, nullptr, data);
+        head = head->mPrev;
+    } else {
+        curr->mPrev = new Node()
+    } 
+        
+}
+
+void pushBack(Node *head, Node *tail, int data) {
+    if(head == nullptr) {
+        head = tail = new Node(nullptr, nullptr, data);
+    } else {
+        tail->mNext = new Node(tail, nullptr, data);
+        tail = tail->mNext;
+    }
+}
+
 void printInDirectOrder(const list<int> &lst)
 {
     for (auto e : lst)
@@ -18,6 +46,7 @@ void printInDirectOrder(const list<int> &lst)
     }
     cout << endl;
 }
+
 void printReverseOrder(const list<int> &lst)
 {
     for (auto it = lst.rbegin(); it != lst.rend(); ++it)
@@ -26,6 +55,7 @@ void printReverseOrder(const list<int> &lst)
     }
     cout << endl;
 }
+
 int main()
 {
     list<int> lst;
